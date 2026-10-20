@@ -342,6 +342,7 @@ class OpenWakeWord private constructor(
                 for (i in fStart until featureBuffer.size) features.add(featureBuffer[i])
 
                 val score = runWakeWordModel(features)
+                Log.d(TAG, "JARVIS SCORE: $score")
                 if (score >= threshold) {
                     val now = System.currentTimeMillis()
                     if (now - lastDetectionTime > debounceMs) {
